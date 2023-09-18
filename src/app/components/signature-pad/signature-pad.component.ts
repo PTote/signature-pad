@@ -36,7 +36,7 @@ export class SignaturePadComponent implements OnInit {
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent) {
     const {touches} = event
-    // this.startPointDrawing(touches[0].clientX, touches[0].clientY)
+    this.startPointDrawing(touches[0].clientX, touches[0].clientY)
   }
 
   @HostListener('touchmove', ['$event'])

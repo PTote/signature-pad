@@ -36,7 +36,7 @@ export class SignaturePadComponent implements OnInit {
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent) {
     const {touches} = event
-    this.startPointDrawing(touches[0].clientX, touches[0].clientY)
+    // this.startPointDrawing(touches[0].clientX, touches[0].clientY)
   }
 
   @HostListener('touchmove', ['$event'])
@@ -48,6 +48,22 @@ export class SignaturePadComponent implements OnInit {
   @HostListener('touchend', ['$event'])
   onTouchEnd(event: TouchEvent) {
     // Manejar evento de finalización de toque
+  }
+
+  onMouseDown(event: MouseEvent): void {
+    this.startPointDrawing(event.clientX, event.clientY);
+  }
+
+  onMouseMove(event: MouseEvent): void {
+    this.drawingMoves(event.clientX, event.clientY);
+  }
+
+  onMouseUp() {
+    this.drawing = false;
+  }
+
+  onMouseLeave() {
+    this.drawing = false;
   }
 
   getScreenSize(): void {
@@ -153,21 +169,7 @@ export class SignaturePadComponent implements OnInit {
     this.isCanvasEmpty()
   }
 
-  onMouseDown(event: MouseEvent): void {
-    this.startPointDrawing(event.clientX, event.clientY);
-  }
 
-  onMouseMove(event: MouseEvent): void {
-    this.drawingMoves(event.clientX, event.clientY);
-  }
-
-  onMouseUp() {
-    this.drawing = false;
-  }
-
-  onMouseLeave() {
-    this.drawing = false;
-  }
 
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);

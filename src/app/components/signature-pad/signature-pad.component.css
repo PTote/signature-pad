@@ -1,0 +1,25 @@
+.canvas-element{
+  outline: 1px black solid;
+  cursor: pointer;
+}
+
+button{
+  margin: 5px 5px;
+}
+
+.signature-pad-container{
+  display: grid;
+  justify-items: center;
+}
+
+
+
+@media screen and (min-width: 600px) {
+
+  .signature-pad-container{
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+  }
+
+}

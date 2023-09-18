@@ -1,0 +1,19 @@
+<div class="signature-pad-container">
+  <div class="canvas-container">
+    <canvas
+    #canvas
+    class="canvas-element"
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp()"
+    (mouseleave)="onMouseLeave()"
+    (drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+    ></canvas>
+  </div>
+  <div class="btns">
+    <button (click)="clearCanvas()">Borrar</button>
+    <button #btnDownloadJPG (click)="saveSignatureJPG()" >Guardar JPG</button>
+    <button #btnDownloadPNG (click)="saveSignaturePNG()" >Guardar PNG</button>
+  </div>
+</div>

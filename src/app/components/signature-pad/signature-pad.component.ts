@@ -80,7 +80,7 @@ export class SignaturePadComponent implements OnInit {
 
     if (this.screenWidth > 280 && this.screenWidth < 480) {
       this.ctx.canvas.width = 250
-      this.ctx.canvas.height = 100
+      this.ctx.canvas.height = 200
     }
 
     if (this.screenWidth > 480 && this.screenWidth < 600) {
